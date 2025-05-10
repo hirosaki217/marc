@@ -1,0 +1,59 @@
+my-app/
+├── src/
+│   ├── app/                    # Routing and page-related files
+│   │   ├── (auth)/             # Route group for authentication routes
+│   │   │   ├── login/
+│   │   │   │   ├── page.tsx    # Login page
+│   │   │   ├── register/
+│   │   │   │   ├── page.tsx    # Register page
+│   │   │   ├── layout.tsx      # Shared layout for auth routes
+│   │   ├── dashboard/          # Dashboard feature
+│   │   │   ├── page.tsx        # Dashboard page
+│   │   │   ├── loading.tsx     # Loading state for dashboard
+│   │   │   ├── components/     # Co-located components specific to dashboard
+│   │   │   │   ├── Chart.tsx
+│   │   ├── api/                # API routes
+│   │   │   ├── users/
+│   │   │   │   ├── route.ts    # API route handler for users
+│   │   ├── layout.tsx          # Root layout
+│   │   ├── page.tsx            # Root page (e.g., homepage)
+│   │   ├── globals.css         # Global styles
+│   ├── components/             # Shared, reusable UI components
+│   │   ├── ui/                # Generic UI components (e.g., buttons, modals)
+│   │   │   ├── Button.tsx
+│   │   │   ├── Modal.tsx
+│   │   ├── layout/            # Layout components (e.g., header, footer)
+│   │   │   ├── Header.tsx
+│   │   ├── feature/           # Feature-specific components
+│   │   │   ├── cart/          # E-commerce cart components
+│   │   │   │   ├── CartItem.tsx
+│   ├── lib/                   # Business logic, database queries, and utilities
+│   │   ├── db.ts              # Database connection (e.g., Prisma)
+│   │   ├── queries/           # Database query functions
+│   │   │   ├── users.ts
+│   │   ├── auth.ts            # Authentication logic
+│   ├── hooks/                 # Custom React hooks
+│   │   ├── useAuth.ts
+│   │   ├── useFetchData.ts
+│   ├── utils/                 # General utility functions
+│   │   ├── formatDate.ts
+│   │   ├── api.ts             # API call helpers
+│   ├── types/                 # TypeScript type definitions
+│   │   ├── user.ts
+│   │   ├── product.ts
+│   ├── styles/                # Shared styles (e.g., CSS modules, Tailwind config)
+│   │   ├── variables.css
+│   ├── context/               # State management (e.g., Context API)
+│   │   ├── AuthContext.tsx
+│   ├── services/              # External API calls
+│   │   ├── stripe.ts
+│   ├── models/                # Database models (e.g., Prisma schemas)
+│   │   ├── user.model.ts
+├── public/                    # Static assets
+│   ├── images/
+│   ├── favicon.ico
+├── .eslintrc.json             # ESLint configuration
+├── .gitignore
+├── next.config.js             # Next.js configuration
+├── package.json
+├── tsconfig.json              # TypeScript configuration
