@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import tabSvg from "../../../public/tab.svg";
 import logoImage from "../../../public/logo.webp";
 import megaImage1 from "../../../public/mega-image_1-1.jpg";
 import megaImage2 from "../../../public/mega-image_1-2.jpg";
@@ -9,19 +8,10 @@ import cartImage from "../../../public/cart.svg";
 import accountImage from "../../../public/account.svg";
 import searchImage from "../../../public/search.svg";
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "../ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
-import { Menu, ShoppingCart, User, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 function Header() {
 
   return (
@@ -55,34 +45,182 @@ const navigationItems = [
     title: "SẢN PHẨM",
     href: "#",
     dropdown: undefined,
-    dropdownUi: 12345
+    dropdownUi: (<div key={1} className="grid grid-cols-12 gap-8">
+      <div className="col-span-3">
+        <div className="relative rounded-xl overflow-hidden">
+          <Image src={megaImage1} alt="mega-image-1" />
+          <div className="absolute group hover:bg-linear-to-t from-[#00000060] to-transparent top-0 left-0 w-full h-full px-5 py-8 content-end">
+            <span className="text-white hidden group-hover:block font-light">Mua ngay</span>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-3">
+        <div className="relative rounded-xl overflow-hidden">
+          <Image src={megaImage2} alt="mega-image-2" />
+          <div className="absolute group hover:bg-linear-to-t from-[#00000060] to-transparent top-0 left-0 w-full h-full px-5 py-8 content-end">
+            <span className="text-white hidden group-hover:block font-light">Mua ngay</span>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-6">
+        <div className="grid grid-cols-3">
+          <div className="px-9 border-r-1 border-gray-300">
+            <h4 className="pb-3">Ưu đãi</h4>
+            <ul className="mega-child">
+              <li className="text-sm mb-1"><a href="https://marc.com.vn/account/register">Tặng 50K thành viên mới</a></li>
+            </ul>
+          </div>
+          <div className="px-9 border-r-1 border-gray-300">
+            <h4 className="pb-3">Sản phẩm</h4>
+            <ul className="mega-child">
+              <li className="text-sm mb-1"><a href="/collections/marc-signature">MARC Signature</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-khoac-blazer">Áo Blazer</a></li>
+              <li className="text-sm mb-1"><a href="/collections/quan-suong">Quần ống suông</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-so-mi">Áo sơ mi công sở</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-kieu">Áo kiểu</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-thun-nu">Áo thun</a></li>
+              <li className="text-sm mb-1"><a href="/collections/dam">Đầm</a></li>
+              <li className="text-sm mb-1"><a href="/collections/vay">Váy</a></li>
+              <li className="text-sm mb-1"><a href="/collections/quan">Quần</a></li>
+              <li className="text-sm mb-1"><a href="/collections/do-boi">Đồ bơi</a></li>
+            </ul>
+          </div>
+          <div className="px-9">
+            <h4 className="pb-3">Trending</h4>
+            <ul className="mega-child">
+              <li className="text-sm mb-1"><a href="/blogs/mac-dep/phoi-ao-blazer-voi-dam">Phối áo Blazer với Đầm</a></li>
+              <li className="text-sm mb-1"><a href="/collections/quan-suong">Quần suông hack dáng</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-thun-nu">Áo thun năng động</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>)
 
   },
   { title: "LOOKBOOK", href: "#about", dropdown: undefined },
   {
-    title: "DỊP/SỰ KIỆN", href: "#contact", dropdown: [
-      { title: "Consulting", href: "#consulting" },
-      { title: "Repairs", href: "#repairs" },
-      { title: "Installation", href: "#installation" },
-    ],
+    title: "DỊP/SỰ KIỆN", href: "#contact", dropdown: undefined,
+    dropdownUi: (<div key={1} className="grid grid-cols-12 gap-8">
+      <div className="col-span-3">
+        <div className="relative rounded-xl overflow-hidden">
+          <Image src={megaImage1} alt="mega-image-1" />
+          <div className="absolute group hover:bg-linear-to-t from-[#00000060] to-transparent top-0 left-0 w-full h-full px-5 py-8 content-end">
+            <span className="text-white hidden group-hover:block font-light">Mua ngay</span>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-3">
+        <div className="relative rounded-xl overflow-hidden">
+          <Image src={megaImage2} alt="mega-image-2" />
+          <div className="absolute group hover:bg-linear-to-t from-[#00000060] to-transparent top-0 left-0 w-full h-full px-5 py-8 content-end">
+            <span className="text-white hidden group-hover:block font-light">Mua ngay</span>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-6">
+        <div className="grid grid-cols-3">
+          <div className="px-9 border-r-1 border-gray-300">
+            <h4 className="pb-3">Ưu đãi</h4>
+            <ul className="mega-child">
+              <li className="text-sm mb-1"><a href="https://marc.com.vn/account/register">Tặng 50K thành viên mới</a></li>
+            </ul>
+          </div>
+          <div className="px-9 border-r-1 border-gray-300">
+            <h4 className="pb-3">Sản phẩm</h4>
+            <ul className="mega-child">
+              <li className="text-sm mb-1"><a href="/collections/marc-signature">MARC Signature</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-khoac-blazer">Áo Blazer</a></li>
+              <li className="text-sm mb-1"><a href="/collections/quan-suong">Quần ống suông</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-so-mi">Áo sơ mi công sở</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-kieu">Áo kiểu</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-thun-nu">Áo thun</a></li>
+              <li className="text-sm mb-1"><a href="/collections/dam">Đầm</a></li>
+              <li className="text-sm mb-1"><a href="/collections/vay">Váy</a></li>
+              <li className="text-sm mb-1"><a href="/collections/quan">Quần</a></li>
+              <li className="text-sm mb-1"><a href="/collections/do-boi">Đồ bơi</a></li>
+            </ul>
+          </div>
+          <div className="px-9">
+            <h4 className="pb-3">Trending</h4>
+            <ul className="mega-child">
+              <li className="text-sm mb-1"><a href="/blogs/mac-dep/phoi-ao-blazer-voi-dam">Phối áo Blazer với Đầm</a></li>
+              <li className="text-sm mb-1"><a href="/collections/quan-suong">Quần suông hack dáng</a></li>
+              <li className="text-sm mb-1"><a href="/collections/ao-thun-nu">Áo thun năng động</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>)
   },
   {
     title: "BLOG", href: "#contact", dropdown: [
-      { title: "Consulting", href: "#consulting" },
-      { title: "Repairs", href: "#repairs" },
-      { title: "Installation", href: "#installation" },
+      {
+        title: "Tin Tức Nhà MARC",
+        href: "/blogs/tin-tuc"
+      },
+      {
+        title: "Góc Tư Vấn Mặc Đẹp",
+        href: "/blogs/mac-dep"
+      },
+      {
+        title: "Phối quần ống rộng hack chiều cao",
+        href: "/search?type=article&q=quan%20ong%20rong&view=article"
+      },
+      {
+        title: "Chuẩn form với quần ống suông",
+        href: "/search?type=article&q=ong%20suong&view=article"
+      },
+      {
+        title: "Phối đồ sang trọng với áo Blazer",
+        href: "/search?type=article&q=blazer&view=article"
+      },
+      {
+        title: "Đồ công sở nhẹ nhàng, lịch sự",
+        href: "/search?type=article&q=cong%20so&view=article"
+      },
+      {
+        title: "Thêm xinh với váy chữ A",
+        href: "/search?type=article&q=vay%20chu%20a&view=article"
+      },
+      {
+        title: "Phối đồ với chân váy",
+        href: "/search?type=article&q=chan%2520vay&view=article"
+      },
+      {
+        title: "Phối áo cá tính",
+        href: "/search?type=article&q=phoi%20ao&view=article"
+      },
+      {
+        title: "Đồ  dự tiệc sáng trọng thu hút",
+        href: "/search?type=article&q=du%20tiec&view=article"
+      },
+      {
+        title: "Mix áo sơ mi nhẹ nhàng cá tính",
+        href: "/search?type=article&q=ao%20so%20mi&view=article"
+      },
+      {
+        title: "Mix quần Jean đầy cá tính",
+        href: "/search?type=article&q=quan%20jean&view=article"
+      },
+      {
+        title: "Phối quần tôn vóc dáng",
+        href: "/search?type=article&q=phoi%20quan&view=article"
+      },
+      {
+        title: "Mẹo phối đồ tăng chiều cao",
+        href: "/search?type=article&q=lun%20cao&view=article"
+      }
     ],
   },
   {
-    title: "CỬA HÀNG", href: "#contact", dropdown: [
-
-    ],
+    title: "CỬA HÀNG", href: "#contact", dropdown: undefined,
   },
 ]
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>("BLOG")
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // Handle mouse enter on menu items
@@ -99,9 +237,12 @@ export function Navbar() {
   // Handle mouse leave with delay
   const handleMouseLeave = () => {
     // Set a timeout to hide the dropdown after a delay
-    timeoutRef.current = setTimeout(() => {
-      setActiveDropdown(null)
-    }, 300) // 300ms delay before hiding
+    // timeoutRef.current = setTimeout(() => {
+    //   setActiveDropdown(null)
+    // }, 200) // 300ms delay before hiding
+    setActiveDropdown(null)
+
+
   }
 
   // Cancel the timeout when component unmounts
@@ -142,10 +283,37 @@ export function Navbar() {
               {navigationItems.map((item) => (
                 <div
                   key={item.title}
-                  className="relative"
-                  onMouseEnter={() => item.dropdown || item.dropdownUi && handleMouseEnter(item.title)}
+                  className={item.dropdown ? "relative" : ""}
+                  onMouseEnter={() =>
+                    handleMouseEnter(item.title)
+                  }
                   onMouseLeave={handleMouseLeave}
                 >
+                  {activeDropdown === item.title && item.dropdown && (
+                    <div className="py-6 absolute top-8">
+                      <div className="mx-auto w-[300px] px-1" onMouseLeave={handleMouseLeave}>
+                        {item.dropdown && (<div key={item.title} className="w-full flex flex-col shadow">
+                          {item.dropdown.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.title}
+                              href={dropdownItem.href}
+                              className="rounded-sm px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
+                            >
+                              {dropdownItem.title}
+                            </Link>
+                          ))}
+                        </div>)}
+                      </div>
+                    </div>
+                  )}
+                  {activeDropdown === item.title && item.dropdownUi && (
+                    <div
+                      className="absolute top-[80%] left-1/2 -translate-x-1/2 z-50 w-full bg-background container py-10"
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {item.dropdownUi && (<div className="mx-auto w-full px-6 py-4"> {item.dropdownUi}</div>)}
+                    </div>
+                  )}
                   {item.dropdown ? (
                     <Button
                       variant="ghost"
@@ -160,6 +328,8 @@ export function Navbar() {
                   )}
                 </div>
               ))}
+              {/* Centered Dropdown Container */}
+
             </div>
 
             {/* User Actions */}
@@ -209,86 +379,7 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Centered Dropdown Container */}
-          {activeDropdown && (
-            <div
-              className="absolute left-1/2 -translate-x-1/2 z-50 w-full bg-background container py-10"
-              onMouseEnter={() => handleMouseEnter(activeDropdown)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="mx-auto w-full px-4 py-4">
-                
-                {navigationItems.map(
-                  (item) => {
-                    if (item.title === activeDropdown) {
-                      if (item.dropdown) return (
-                        <div key={item.title} className="grid gap-2 md:grid-cols-2">
-                          {item.dropdown.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.title}
-                              href={dropdownItem.href}
-                              className="block rounded-sm px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
-                            >
-                              {dropdownItem.title}
-                            </Link>
-                          ))}
-                        </div>
-                      )
 
-                      if (item.dropdownUi) return (<div key={item.title} className="grid grid-cols-12 gap-8">
-                        <div className="col-span-3 rounded-xl overflow-hidden relative">
-                          <Image src={megaImage1} alt="mega-image-1" />
-                          <div className="absolute group hover:bg-linear-to-t from-[#00000060] to-transparent top-0 left-0 w-full h-full px-5 py-8 content-end">
-                            <span className="text-white hidden group-hover:block font-light">Mua ngay</span>
-                          </div>
-                        </div>
-                        <div className="col-span-3 rounded-xl overflow-hidden relative">
-                          <Image src={megaImage2} alt="mega-image-2" />
-                          <div className="absolute group hover:bg-linear-to-t from-[#00000060] to-transparent top-0 left-0 w-full h-full px-5 py-8 content-end">
-                            <span className="text-white hidden group-hover:block font-light">Mua ngay</span>
-                          </div>
-                        </div>
-                        <div className="col-span-6">
-                          <div className="grid grid-cols-3">
-                            <div className="px-9 border-r-1 border-gray-300">
-                              <h4 className="pb-3">Ưu đãi</h4>
-                              <ul className="mega-child">
-                                <li className="text-sm mb-1"><a href="https://marc.com.vn/account/register">Tặng 50K thành viên mới</a></li>
-                              </ul>
-                            </div>
-                            <div className="px-9 border-r-1 border-gray-300">
-                              <h4 className="pb-3">Sản phẩm</h4>
-                              <ul className="mega-child">
-                                <li className="text-sm mb-1"><a href="/collections/marc-signature">MARC Signature</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/ao-khoac-blazer">Áo Blazer</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/quan-suong">Quần ống suông</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/ao-so-mi">Áo sơ mi công sở</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/ao-kieu">Áo kiểu</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/ao-thun-nu">Áo thun</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/dam">Đầm</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/vay">Váy</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/quan">Quần</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/do-boi">Đồ bơi</a></li>
-                              </ul>
-                            </div>
-                            <div className="px-9">
-                              <h4 className="pb-3">Trending</h4>
-                              <ul className="mega-child">
-                                <li className="text-sm mb-1"><a href="/blogs/mac-dep/phoi-ao-blazer-voi-dam">Phối áo Blazer với Đầm</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/quan-suong">Quần suông hack dáng</a></li>
-                                <li className="text-sm mb-1"><a href="/collections/ao-thun-nu">Áo thun năng động</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>)
-                    }
-
-                  },
-                )}
-              </div>
-            </div>
-          )}
         </div>
 
 
@@ -306,51 +397,18 @@ export function Navbar() {
                 )}
               </div>
             ))}
-            {/* <div className="flex items-center gap-4 pt-4">
-            <ul className="header-actions flex items-center">
-              <li className="pr-4">
-                <Link
-                  href={"/pages/wishlist"}
-                  className="relative block w-6 h-6"
-                >
-                  <Image src={wishlistImage} alt="wishlist" />
-                  <span className="absolute right-[-8px] top-[-4px] text-center text-white text-[10px] rounded-lg w-[15px] h-[15px] bg-[#D37171] font-bold">
-                    0
-                  </span>
-                </Link>
-              </li>
-              <li className="pr-4">
-                <Link href={"/cart"} className="relative block w-6 h-6">
-                  <Image src={cartImage} alt="cart" />
-                  <span className="absolute right-[-8px] top-[-4px] text-center text-white text-[10px] rounded-lg w-[15px] h-[15px] bg-[#D37171] font-bold">
-                    0
-                  </span>
-                </Link>
-              </li>
-              <li className="pr-4">
-                <Link href={"/account"} className="relative block w-6 h-6">
-                  <Image src={accountImage} alt="account" />{" "}
-                </Link>
-              </li>
-              <li>
-                <span className="relative block w-6 h-6">
-                  <Image src={searchImage} alt="search" />
-                </span>
-              </li>
-            </ul>
-          </div> */}
           </div>
         </div>
       </nav>
       <div className={cn("absolute bottom-0 py-2 right-0 left-0 md:hidden z-50")}>
         <ul className="footer-toolbar__list grid grid-cols-5 gap-1">
           <li className="">
-            <a href="/" className="toolbar__item flex flex-col justify-center items-center">
+            <Link href="/" className="toolbar__item flex flex-col justify-center items-center">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.115 0.427896C10.809 0.152426 10.4118 0 10 0C9.58824 0 9.19105 0.152426 8.885 0.427896L0 8.42456V17.0912C0 17.7985 0.280952 18.4768 0.781049 18.9768C1.28115 19.4769 1.95942 19.7579 2.66667 19.7579H17.3333C18.0406 19.7579 18.7189 19.4769 19.219 18.9768C19.719 18.4768 20 17.7985 20 17.0912V8.42456L11.115 0.427896ZM12.5 18.0887H7.5V13.9004C7.5 13.2374 7.76339 12.6015 8.23223 12.1326C8.70107 11.6638 9.33696 11.4004 10 11.4004C10.663 11.4004 11.2989 11.6638 11.7678 12.1326C12.2366 12.6015 12.5 13.2374 12.5 13.9004V18.0887ZM18.3333 17.0887C18.3333 17.3539 18.228 17.6083 18.0404 17.7958C17.8529 17.9834 17.5985 18.0887 17.3333 18.0887H14.1667V13.9004C14.1667 12.7953 13.7277 11.7355 12.9463 10.9541C12.1649 10.1727 11.1051 9.73373 10 9.73373C8.89493 9.73373 7.83512 10.1727 7.05372 10.9541C6.27232 11.7355 5.83333 12.7953 5.83333 13.9004V18.0887H2.66667C2.40145 18.0887 2.1471 17.9834 1.95956 17.7958C1.77202 17.6083 1.66667 17.3539 1.66667 17.0887V9.16623L10 1.66623L18.3333 9.16623V17.0887Z" fill="#B1B1B1"></path>
               </svg>
               <span className="font-normal text-[#B1B1B1] text-sm pt-1">Trang chủ</span>
-            </a>
+            </Link>
           </li>
           <li className="flex justify-center items-center">
             <a href="/collections/all" className="toolbar__item flex flex-col justify-center items-center">
